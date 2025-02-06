@@ -132,6 +132,26 @@
       50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
+
+    /* Google Slides Button */
+    .slides-btn {
+      display: none; /* Hidden until login */
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: pink;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .slides-btn:hover {
+      background-color: lightpink;
+    }
+
+    
   </style>
 </head>
 <body>
@@ -159,9 +179,12 @@
 
 
     <!-- Big Heart with the message -->
-    <div class="big-heart" id="bigHeart">
+     <div class="big-heart" id="bigHeart">
       <div class="heart"></div>
       <h1>Super Secret Invite</h1>
+      <a id="slidesButton" href="https://docs.google.com/presentation/d/1uke6t_NiKEJIt9Sz9abROoOvDqKwt1xQLOFO_zWDBO0/edit?usp=sharing" target="_blank" class="slides-btn">
+        View Your Special Surprise
+      </a>
     </div>
   </div>
 
@@ -179,6 +202,7 @@
         document.getElementById('loginContainer').style.display = 'none';
         document.getElementById('heartContainer').style.display = 'flex';
         document.getElementById('bigHeart').style.display = 'flex';
+        document.getElementById('slidesButton').style.display = 'inline-block'; // Show button
         document.querySelector('.soundcloud').style.display = 'block';
       } else {
         alert("Invalid username or password. Please try again.");
