@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Will you be my Valentine?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: pink;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .login-container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-container input {
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      border: 1px solid pink;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      padding: 10px 20px;
+      background-color: pink;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-container button:hover {
+      background-color: lightpink;
+    }
+
+    .heart {
+      background-color: red;
+      display: inline-block;
+      height: 30px;
+      margin: 0 10px;
+      position: relative;
+      transform: rotate(-45deg);
+      width: 30px;
+      animation: pulse 1s ease infinite; /* Added pulsing animation */
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: red;
+      border-radius: 50%;
+      height: 30px;
+      position: absolute;
+      width: 30px;
+    }
+
+    .heart:before {
+      top: -15px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 15px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.3) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    .big-heart {
+      position: relative; /* Change to relative */
+      display: flex; /* Keep it as flex */
+      flex-direction: column; /* Vertical alignment */
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      top: 50%; /* Move it down by 50% */
+      transform: translateY(-50%); /* Correct for the height */
+      margin-top: 20px; /* Add some space if needed */
+    }
+
+    .big-heart h1 {
+      color: white;
+      font-size: 22px;
+      text-align: center;
+      padding: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+    }
+
+    .hello-kitty {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hello-kitty:nth-child(1) { top: 10%; left: 5%; }
+    .hello-kitty:nth-child(2) { top: 20%; right: 10%; }
+    .hello-kitty:nth-child(3) { bottom: 15%; left: 20%; }
+    .hello-kitty:nth-child(4) { bottom: 10%; right: 15%; }
+    .hello-kitty:nth-child(5) { top: 40%; left: 70%; }
+    .hello-kitty:nth-child(6) { bottom: 40%; right: 5%; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container" id="loginContainer">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="container" id="heartContainer">
+    <!-- Floating Hello Kitty images -->
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
+
+    <!-- Big Heart with the message -->
+    <div class="big-heart" id="bigHeart">
+      <div class="heart"></div> <!-- Heart shape -->
+      <h1>Super Secert Invite🤫</h1>
+    </div>
+  </div>
+  
+<!-- SoundCloud embedded player, hidden with CSS -->
+  <iframe class="soundcloud" width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1136361535&color=%23ff5500&auto_play=true">
+  </iframe>
+
+
+  <script>
+    // Function to handle login
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check credentials
+      if (username === "Lima" && password === "EdwardIsTheGoat") {
+        // Hide login and show heart container
+        document.getElementById('loginContainer').style.display = 'none';
+        document.getElementById('heartContainer').style.display = 'flex'; // Show heart container
+        document.getElementById('bigHeart').style.display = 'flex'; // Show the big heart
+        document.getElementById('backgroundMusic').play(); // Play background music
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+
+    // Initially hide heart container
+    document.getElementById('heartContainer').style.display = 'none';
+  </script>
+</body>
+</html>
