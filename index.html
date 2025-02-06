@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Super Secret Invite ?</title>
+  <title>Login - Super Secret Invite</title>
   <style>
     * {
       margin: 0;
@@ -58,7 +58,7 @@
       position: relative;
       transform: rotate(-45deg);
       width: 30px;
-      animation: pulse 1s ease infinite; /* Added pulsing animation */
+      animation: pulse 1s ease infinite;
     }
 
     .heart:before,
@@ -88,14 +88,14 @@
     }
 
     .big-heart {
-      position: relative; /* Change to relative */
-      display: flex; /* Keep it as flex */
-      flex-direction: column; /* Vertical alignment */
-      justify-content: center; /* Center vertically */
-      align-items: center; /* Center horizontally */
-      top: 50%; /* Move it down by 50% */
-      transform: translateY(-50%); /* Correct for the height */
-      margin-top: 20px; /* Add some space if needed */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 20px;
     }
 
     .big-heart h1 {
@@ -103,22 +103,22 @@
       font-size: 22px;
       text-align: center;
       padding: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-.minecraft-heart {
-  position: absolute;
-  width: 50px; /* Adjust size as needed */
-  height: auto;
-  animation: float 6s ease-in-out infinite;
-}
+    .minecraft-heart {
+      position: absolute;
+      width: 80px;
+      height: auto;
+      animation: float 6s ease-in-out infinite;
+    }
 
-.minecraft-heart:nth-child(1) { top: 10%; left: 5%; }
-.minecraft-heart:nth-child(2) { top: 20%; right: 10%; }
-.minecraft-heart:nth-child(3) { bottom: 15%; left: 20%; }
-.minecraft-heart:nth-child(4) { bottom: 10%; right: 15%; }
-.minecraft-heart:nth-child(5) { top: 40%; left: 70%; }
-.minecraft-heart:nth-child(6) { bottom: 40%; right: 5%; }
+    .minecraft-heart:nth-child(1) { top: 10%; left: 5%; }
+    .minecraft-heart:nth-child(2) { top: 20%; right: 10%; }
+    .minecraft-heart:nth-child(3) { bottom: 15%; left: 20%; }
+    .minecraft-heart:nth-child(4) { bottom: 10%; right: 15%; }
+    .minecraft-heart:nth-child(5) { top: 40%; left: 70%; }
+    .minecraft-heart:nth-child(6) { bottom: 40%; right: 5%; }
 
     @keyframes float {
       0% { transform: translateY(0); }
@@ -136,46 +136,41 @@
   </div>
 
   <div class="container" id="heartContainer">
-    <!-- Floating Hello Kitty images -->
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
-    <img src="https://github.com/Sutanie/The-Lima-Project/blob/b468d010ac538b3e323623448b621c721801cfef/Minecraft%20Hearts.png?raw=true" class="minecraft heart" alt="Minecraft Heart">
+    <!-- Floating Minecraft heart images using your GitHub image URL -->
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
+    <img src="https://raw.githubusercontent.com/Sutanie/The-Lima-Project/refs/heads/main/Minecraft%20Hearts.png" class="minecraft-heart" alt="Minecraft Heart">
 
     <!-- Big Heart with the message -->
     <div class="big-heart" id="bigHeart">
-      <div class="heart"></div> <!-- Heart shape -->
-      <h1>Super Secret Invite🤫</h1>
+      <div class="heart"></div>
+      <h1>Super Secret Invite</h1>
     </div>
   </div>
-  
-<!-- SoundCloud embedded player, hidden with CSS -->
+
+  <!-- SoundCloud embedded player, hidden with CSS -->
   <iframe class="soundcloud" width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1136361535&color=%23ff5500&auto_play=true">
   </iframe>
 
-
   <script>
-    // Function to handle login
     function login() {
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
-      // Check credentials
       if (username === "Lima" && password === "EdwardIsTheGoat") {
-        // Hide login and show heart container
         document.getElementById('loginContainer').style.display = 'none';
-        document.getElementById('heartContainer').style.display = 'flex'; // Show heart container
-        document.getElementById('bigHeart').style.display = 'flex'; // Show the big heart
-        document.getElementById('backgroundMusic').play(); // Play background music
+        document.getElementById('heartContainer').style.display = 'flex';
+        document.getElementById('bigHeart').style.display = 'flex';
+        document.querySelector('.soundcloud').style.display = 'block';
       } else {
         alert("Invalid username or password. Please try again.");
       }
     }
 
-    // Initially hide heart container
     document.getElementById('heartContainer').style.display = 'none';
   </script>
 </body>
